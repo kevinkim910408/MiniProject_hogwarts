@@ -43,25 +43,25 @@ const IntroMovie = () => {
             
     const Cards = numList.map((value, index)=>(<IntroCard key={index} img={bookImgs[index]} name={bookName[index]} date={dayRelease[index]}></IntroCard>))
     return (
+      <>
+        {/* Header Menu : fixed Component */}
+        <HeaderNavi></HeaderNavi>
         <Wrap>
-          {/* Header Menu : fixed Component */}
-          <HeaderNavi></HeaderNavi>
            <Swiper
-        slidesPerView={1}
-        spaceBetween={30}
-        loop={true}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {Cards.map((value)=>(<SwiperSlide>{value}</SwiperSlide>))}
-
-      </Swiper>
-              
+            slidesPerView={1}
+            spaceBetween={30}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {Cards.map((value)=>(<SwiperSlide>{value}</SwiperSlide>))}
+          </Swiper>     
         </Wrap>
+        </>
     )
 }
 
