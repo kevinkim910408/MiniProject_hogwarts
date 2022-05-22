@@ -1,6 +1,7 @@
 /* GlobalStyle.jsx */
 import { createGlobalStyle} from 'styled-components';
 import { normalize } from "styled-normalize";
+import BG from "../../img/bg.jpg";
 
 const GlobalStyle = createGlobalStyle `
 ${normalize} // normalize
@@ -12,7 +13,16 @@ ${normalize} // normalize
 }
 
 body {
-    background-color: var(--pink)
+    width: 100%;
+    height: 100vh;
+    background-image: url(${BG});
+    background-position: center;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    // 스크롤 삭제 - 기능은 있음
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
 }
 
 :root {

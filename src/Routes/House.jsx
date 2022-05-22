@@ -7,6 +7,10 @@ import CharacterCard from '../Components/CharacterCard.jsx';
 
 // Import Header Menu Components
 import HeaderNavi from "../Components/HeaderNavi.jsx";
+import B1 from '../img/B1.jpg';
+import B2 from '../img/B2.jpg';
+import B3 from '../img/B3.jpg';
+import B4 from '../img/B4.jpg';
 
 // URL은 뭔가 이렇게 관리가 하고싶었습니다
 const URL = 'http://hp-api.herokuapp.com/api/characters/house/';
@@ -16,6 +20,9 @@ const House = () => {
     let [characters, setCharacters] = useState([]);
     // url제일뒤에 붙혀서 하우스 를 판별해줄 변수
     let house = "";
+
+    // 버튼 이미지
+    let imgs = [B1, B2, B3, B4];
    
     // url을 가져오는 함수
     const getCharacters = async()=>{
@@ -41,26 +48,34 @@ const House = () => {
         house = e.target.id;
         // url에서 데이터 가져오는 이벤트 시작
         getCharacters();
+        handleScroll();
     }
+
+    // 클릭하면 스크롤  내려감
+    const handleScroll = () => {  
+        window.scrollTo(0, 500);
+      }
     
     return (
+        <>
+        {/* Header Menu : fixed Component */}
+        <HeaderNavi />
         <Wrap>
-            {/* Header Menu : fixed Component */}
-            <HeaderNavi></HeaderNavi>
             <ContentsWrap>
-                <Header>해리포터 하우스 선택창 예시</Header>
                 <HouseWrap>
                     {/* 하우스 이름은 url 뒤에 붙여야 하기 때문에 그냥 각 기숙사 이름으로 */}
-                    <HouseButton onClick={ClickEventHandler} id={"gryffindor"}>그리핀도르</HouseButton>
-                    <HouseButton onClick={ClickEventHandler} id={"Slytherin"}>슬리데린</HouseButton>
-                    <HouseButton onClick={ClickEventHandler} id={"Ravenclaw"}>래번클로</HouseButton>
-                    <HouseButton onClick={ClickEventHandler} id={"Hufflepuff"}>후플푸프</HouseButton>
+                    <HouseButton onClick={ClickEventHandler} id={"gryffindor"} style={{backgroundImage:`url(${imgs[0]})`}} />
+                    <HouseButton onClick={ClickEventHandler} id={"Slytherin"} style={{backgroundImage:`url(${imgs[1]})`}} />
+                    <HouseButton onClick={ClickEventHandler} id={"Ravenclaw"} style={{backgroundImage:`url(${imgs[2]})`}} />
+                    <HouseButton onClick={ClickEventHandler} id={"Hufflepuff"} style={{backgroundImage:`url(${imgs[3]})`}} />
                 </HouseWrap>
                     <CharactersWrap>
                         {ShowCharacters}
                     </CharactersWrap>
             </ContentsWrap>
         </Wrap>
+        <div style={{ height:"500px"}}></div>
+        </>
     )
 }
 
@@ -68,11 +83,9 @@ export default House;
 
 // styled components
 const Wrap = styled.div`
-  max-width: 1600px;
-  width: 100%;
-  min-height: 95vh;
-  background-color: var(--white);
-  margin: 10px auto;
+  width: 90%;
+  min-width: 1300px;
+  margin: 60px auto;
 `;
 
 const ContentsWrap = styled.div`
@@ -84,9 +97,6 @@ const ContentsWrap = styled.div`
     align-items: center;
 `;
 
-const Header = styled.h1`
-`;
-
 const HouseWrap = styled.div`
     width: 100%;
     height: 100%;
@@ -96,14 +106,15 @@ const HouseWrap = styled.div`
     align-items: center;
 `;
 
-const HouseButton = styled.div`
+const HouseButton = styled.button`
     width: 100%;
-    height: 80vh;
-    background-color: tomato;
-    border: 1px solid #000;
+    height: 95vh;
+    background-size: 100% 100%;
+    filter: brightness(50%);
     &:hover{
-        background-color: teal;
+        filter: brightness(100%);
     }
+    border: none;
 `;
 
 const CharactersWrap = styled.div`

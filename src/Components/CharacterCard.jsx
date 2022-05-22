@@ -11,7 +11,7 @@ const CharacterCard = ({characters, num}) => {
             <></> : 
             <Card>
                 <div>
-                    <img style={{width:"300px",}} src={characters[num].image} alt="" />
+                    <img style={{width:"300px", height:"400px", borderRadius: "10%"}} src={characters[num].image} alt="" />
                 </div>
                 <MiddleTextWrap>
                     <div>{characters[num].name}</div>
@@ -44,12 +44,14 @@ const Card = styled.div`
     height: 450px;
     background-color: black;
     padding: 10px;
-    color: white
+    color: white;
+    border-radius: 30px;
 `;
 
 const MiddleTextWrap = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     font-size: 30px;
 `;

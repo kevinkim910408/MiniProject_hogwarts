@@ -29,6 +29,7 @@ const HeaderBar = styled.div`
   place-items: center;
 
   background-color: black;
+  z-index: 10;
 `;
 // Header Menu Fonts Style
 const HeaderMenu = styled(Link)`
