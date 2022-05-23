@@ -2,6 +2,7 @@
 import { createGlobalStyle} from 'styled-components'; 
 import { normalize } from "styled-normalize"; 
 import BG from "../../img/bg.jpg";
+import '../GlobalStyled/GlobalStyled.module.css'
 
 const GlobalStyle = createGlobalStyle `
 ${normalize} // normalize
@@ -10,6 +11,7 @@ ${normalize} // normalize
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Calligraffitti', cursive;
 }
 
 body {

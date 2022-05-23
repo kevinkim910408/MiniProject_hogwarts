@@ -12,6 +12,7 @@ const HeaderNavi = () => {
           <HeaderMenu to={`/house`}><span>PotterWiki</span></HeaderMenu>
           <HeaderMenu to={`/gallery`}><span>Gallery</span></HeaderMenu>
           <HeaderMenu to={`/IntroMovie`}><span>Book</span></HeaderMenu>
+          <HeaderMenu to={`/MiniGame`}><span>Mini Game</span></HeaderMenu>
         </HeaderBar>
     )
 };
@@ -24,7 +25,7 @@ const HeaderBar = styled.div`
   width : 100%;
 
   display : grid;
-  grid-template-columns : repeat(4, 25%);
+  grid-template-columns : repeat(5, 20%);
   grid-template-rows :  60px;
   place-items: center;
 
