@@ -1,13 +1,11 @@
 .swiper {
     width: 100%;
     height: 100%;
+
 }
 
 .swiper-slide {
-    text-align: center;
     font-size: 18px;
-    background: #fff;
-
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -21,6 +19,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .swiper-slide img {
@@ -33,4 +32,42 @@
 .swiper {
     margin-left: auto;
     margin-right: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    color:#fff;
+}
+
+.swiper-pagination{
+    margin-bottom: 30px;
+}
+
+.swiper-pagination-bullet{
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-pagination-bullet:nth-child(1){
+    background-image: url("../img/P1.png");
+}
+.swiper-pagination-bullet:nth-child(2){
+    background-image: url("../img/P2.png");
+}
+.swiper-pagination-bullet:nth-child(3){
+    background-image: url("../img/P3.png");
+}
+.swiper-pagination-bullet:nth-child(4){
+    background-image: url("../img/P4.png");
+}
+.swiper-pagination-bullet:nth-child(5){
+    background-image: url("../img/P5.png");
+}
+.swiper-pagination-bullet:nth-child(6){
+    background-image: url("../img/P6.png");
+}
+.swiper-pagination-bullet:nth-child(7){
+    background-image: url("../img/P7.png");
 }
