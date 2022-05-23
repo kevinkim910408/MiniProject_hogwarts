@@ -126,4 +126,3 @@ const CharactersWrap = styled.div`
     grid-gap: 10px;
     padding: 20px;
 `;
-
