@@ -20,12 +20,12 @@ const SCROLL_VALUE_Y = 500;
 
 const House = () => {
     // 모든 해리포터 케릭터를 관리해줄 state
-    let [characters, setCharacters] = useState([]);
+    const [characters, setCharacters] = useState([]);
     // url제일뒤에 붙혀서 하우스 를 판별해줄 변수
-    let house = "";
+    const [house,setHouse] = useState(""); 
 
     // 버튼 이미지
-    let imgs = [B1, B2, B3, B4];
+    const imgs = [B1, B2, B3, B4];
    
     // url을 가져오는 함수
     const getCharacters = async()=>{
@@ -47,9 +47,11 @@ const House = () => {
 
     // 버튼 클릭 이벤트
     const ClickEventHandler = (e) => {
-        setCharacters(characters = [])
+        const emptyArr = [];
+        setCharacters(emptyArr);
         // 하우스에 id값을 넣어줌
-        house = e.target.id;
+        const houseID = e.target.id;
+        setHouse(houseID);
         // url에서 데이터 가져오는 이벤트 시작
         getCharacters();
         handleScroll();
@@ -58,7 +60,7 @@ const House = () => {
     // 클릭하면 스크롤  내려감
     const handleScroll = () => {  
         window.scrollTo(0, SCROLL_VALUE_Y);
-      }
+    }
     
     return (
         <>
