@@ -1,6 +1,6 @@
 /* GlobalStyle.jsx */
-import { createGlobalStyle} from 'styled-components';
-import { normalize } from "styled-normalize";
+import { createGlobalStyle} from 'styled-components'; 
+import { normalize } from "styled-normalize"; 
 import BG from "../../img/bg.jpg";
 
 const GlobalStyle = createGlobalStyle `

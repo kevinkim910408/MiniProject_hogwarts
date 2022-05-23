@@ -1,7 +1,7 @@
 /* CharacterCard.jsx */
 
 /* Import */
-import styled from "styled-components";
+import styled, {keyframes } from "styled-components";
 
 const CharacterCard = ({characters, num}) => {
     return (
@@ -33,6 +33,15 @@ const CharacterCard = ({characters, num}) => {
 
 export default CharacterCard;
 
+const animation = keyframes`
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+`;
+
 // styled-components
 const Card = styled.div`
     display: flex;
@@ -46,6 +55,7 @@ const Card = styled.div`
     padding: 10px;
     color: white;
     border-radius: 30px;
+    animation: ${animation} 0.5s;
 `;
 
 const MiddleTextWrap = styled.div`
@@ -55,3 +65,4 @@ const MiddleTextWrap = styled.div`
     justify-content: space-between;
     font-size: 30px;
 `;
+

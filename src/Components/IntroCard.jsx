@@ -9,7 +9,7 @@ const IntroCard = ({img, name, date}) => {
         <>
             <Card>
                 <ImageWrap>
-                    <img style={{width:'350px'}} src={img} alt="" />
+                    <img style={{width:'500px', margin:"50px auto"}} src={img} alt="" />
                 </ImageWrap>
                 <TextWrap>
                     <div>{name}</div>
@@ -41,4 +41,7 @@ const ImageWrap = styled.div`
 
 const TextWrap = styled.div`
     font-size: 40px;
+    @media screen and (max-width: 900px) {
+    display: none;
+    }
 `;
