@@ -53,6 +53,5 @@ export default IntroMovie;
 const Wrap = styled(FlexColumnDiv)`
   min-width: 1300px;
   width: 90%;
-  background-color: var(--black);
   margin: 60px auto;
 `;
