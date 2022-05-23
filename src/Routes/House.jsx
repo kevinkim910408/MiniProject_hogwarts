@@ -4,16 +4,19 @@
 import { useState } from "react";
 import styled from "styled-components";
 import CharacterCard from '../Components/CharacterCard.jsx';
-
-// Import Header Menu Components
+import { FlexRowDiv, FlexColumnDiv, animationFadeInOut } from "../Components/GlobalStyled/CommonStyled.jsx";
 import HeaderNavi from "../Components/HeaderNavi.jsx";
+
+// Import imgs
 import B1 from '../img/B1.jpg';
 import B2 from '../img/B2.jpg';
 import B3 from '../img/B3.jpg';
 import B4 from '../img/B4.jpg';
 
-// URL은 뭔가 이렇게 관리가 하고싶었습니다
+// 숫자열, 문자열 관리
+const HOUSE_ANIMATION_TIME = '2s'
 const URL = 'http://hp-api.herokuapp.com/api/characters/house/';
+const SCROLL_VALUE_Y = 500;
 
 const House = () => {
     // 모든 해리포터 케릭터를 관리해줄 state
@@ -36,7 +39,7 @@ const House = () => {
         // 위에서 data 받은거 새 배열에 보관
         newArr = data.map((value)=>value);
         // 배열에 들어있는거 케릭터 state에 넣어줌
-        setCharacters(characters = newArr)
+        setCharacters(newArr)
     }
 
     // 전체적인 카드를 보여줄 변수
@@ -44,6 +47,7 @@ const House = () => {
 
     // 버튼 클릭 이벤트
     const ClickEventHandler = (e) => {
+        setCharacters(characters = [])
         // 하우스에 id값을 넣어줌
         house = e.target.id;
         // url에서 데이터 가져오는 이벤트 시작
@@ -53,7 +57,7 @@ const House = () => {
 
     // 클릭하면 스크롤  내려감
     const handleScroll = () => {  
-        window.scrollTo(0, 500);
+        window.scrollTo(0, SCROLL_VALUE_Y);
       }
     
     return (
@@ -88,25 +92,18 @@ const Wrap = styled.div`
   margin: 60px auto;
 `;
 
-const ContentsWrap = styled.div`
+const ContentsWrap = styled(FlexColumnDiv)`
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 `;
 
-const HouseWrap = styled.div`
+const HouseWrap = styled(FlexRowDiv)`
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 `;
 
-const HouseButton = styled.button`
+
+const HouseButton = styled.div`
     width: 100%;
     height: 95vh;
     background-size: 100% 100%;
@@ -115,6 +112,7 @@ const HouseButton = styled.button`
         filter: brightness(100%);
     }
     border: none;
+    animation: ${animationFadeInOut} ${HOUSE_ANIMATION_TIME};
 `;
 
 const CharactersWrap = styled.div`
