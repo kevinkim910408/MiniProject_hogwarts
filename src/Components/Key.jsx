@@ -1,10 +1,17 @@
+/* Key.jsx */ 
+
+// Hooks
 import React, { useContext } from "react";
+
+// 전역변수
 import { AppContext } from "../Routes/MiniGame";
 
-function Key({ keyVal, bigKey, disabled }) {
-  const { gameOver, onSelectLetter, onDelete, onEnter } =
-    useContext(AppContext);
 
+const Key = ({ keyVal, bigKey, disabled }) => {
+  // 전역변수
+  const { gameOver, onSelectLetter, onDelete, onEnter } = useContext(AppContext);
+
+  // 키가 눌린건지 enter인지 delete인지 판별
   const selectLetter = () => {
     if (gameOver.gameOver) return;
     if (keyVal === "ENTER") {
@@ -15,6 +22,7 @@ function Key({ keyVal, bigKey, disabled }) {
       onSelectLetter(keyVal);
     }
   };
+  
   return (
     <div
       className="key"

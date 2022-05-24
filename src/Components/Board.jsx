@@ -8,50 +8,33 @@ import Letter from './Letter';
 import React from 'react'
 
 function Board() {
+  const numList = [0,1,2,3,4];
+  const Board1 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={0} />))
+  const Board2 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={1} />))
+  const Board3 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={2} />))
+  const Board4 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={3} />))
+  const Board5 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={4} />))
+  const Board6 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={5} />))
   return (
     <div className="board">
-      {" "}
+      {/* 보드생성 */}
       <div className="row">
-        <Letter letterPos={0} attemptVal={0} />
-        <Letter letterPos={1} attemptVal={0} />
-        <Letter letterPos={2} attemptVal={0} />
-        <Letter letterPos={3} attemptVal={0} />
-        <Letter letterPos={4} attemptVal={0} />
+        {Board1}
       </div>
       <div className="row">
-        <Letter letterPos={0} attemptVal={1} />
-        <Letter letterPos={1} attemptVal={1} />
-        <Letter letterPos={2} attemptVal={1} />
-        <Letter letterPos={3} attemptVal={1} />
-        <Letter letterPos={4} attemptVal={1} />
+        {Board2}
       </div>
       <div className="row">
-        <Letter letterPos={0} attemptVal={2} />
-        <Letter letterPos={1} attemptVal={2} />
-        <Letter letterPos={2} attemptVal={2} />
-        <Letter letterPos={3} attemptVal={2} />
-        <Letter letterPos={4} attemptVal={2} />
+        {Board3}
       </div>
       <div className="row">
-        <Letter letterPos={0} attemptVal={3} />
-        <Letter letterPos={1} attemptVal={3} />
-        <Letter letterPos={2} attemptVal={3} />
-        <Letter letterPos={3} attemptVal={3} />
-        <Letter letterPos={4} attemptVal={3} />
+       {Board4}
       </div>
       <div className="row">
-        <Letter letterPos={0} attemptVal={4} />
-        <Letter letterPos={1} attemptVal={4} />
-        <Letter letterPos={2} attemptVal={4} />
-        <Letter letterPos={3} attemptVal={4} />
-        <Letter letterPos={4} attemptVal={4} />
+       {Board5}
       </div>
       <div className="row">
-        <Letter letterPos={0} attemptVal={5} />
-        <Letter letterPos={1} attemptVal={5} />
-        <Letter letterPos={2} attemptVal={5} />
-        <Letter letterPos={3} attemptVal={5} />
-        <Letter letterPos={4} attemptVal={5} />
+       {Board6}
       </div>
     </div>
   );
