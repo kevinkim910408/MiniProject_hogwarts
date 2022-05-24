@@ -28,11 +28,6 @@ const MiniGame = () =>{
       guessedWord: false,
     });
 
-    // 보드판 초기화?
-    const resetFunc = () =>{
-      console.log(correctWord)
-    }
-
     // 한번만 렌더링해줄 useEffect()
     useEffect(()=>{
         // 다른페이지 갔다오면 단어판 비워주기
@@ -125,7 +120,6 @@ const MiniGame = () =>{
               {/* 게임오버되면 게임오버창 보여줌, 외엔 키보드 띄워줌 */}
               {gameOver.gameOver ? <GameOver /> : <Keyboard />}
             </div>
-            <button onClick={resetFunc}>Reset</button>
           </AppContext.Provider>
         </div>
       );
