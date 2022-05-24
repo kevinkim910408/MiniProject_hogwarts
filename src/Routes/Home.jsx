@@ -5,8 +5,6 @@ import styled from "styled-components";
 import HeaderNavi from "../Components/HeaderNavi.jsx";
 import Video from '../video/HarryPotter.mp4';
 
-
-
 const Home = () => {
     return (
         <>
