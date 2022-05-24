@@ -2,7 +2,7 @@
 
 import wordBank from './word-bank.txt'
 
-// 사용할 보드 5 x 5
+// 사용할 보드 5 x 6
 export const boardDefault = [
     ["","","","",""],
     ["","","","",""],

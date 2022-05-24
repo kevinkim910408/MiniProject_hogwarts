@@ -6,7 +6,6 @@ import React, { useContext } from "react";
 // 전역변수
 import { AppContext } from "../Routes/MiniGame";
 
-
 const Key = ({ keyVal, bigKey, disabled }) => {
   // 전역변수
   const { gameOver, onSelectLetter, onDelete, onEnter } = useContext(AppContext);
@@ -33,4 +32,5 @@ const Key = ({ keyVal, bigKey, disabled }) => {
     </div>
   );
 }
+
 export default Key

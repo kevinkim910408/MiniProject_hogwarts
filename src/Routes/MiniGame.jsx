@@ -28,11 +28,14 @@ const MiniGame = () =>{
       guessedWord: false,
     });
 
+    // 보드판 초기화?
+    const resetFunc = () =>{
+      console.log(correctWord)
+    }
+
     // 한번만 렌더링해줄 useEffect()
     useEffect(()=>{
         // 다른페이지 갔다오면 단어판 비워주기
-        setWordSet("");
-        setCorrectWord("");
         // 단어판 생성
         generateWordSet().then((word)=>{
             //console.log(word.wordSet)
@@ -40,8 +43,9 @@ const MiniGame = () =>{
             setWordSet(word.wordSet);
             setCorrectWord(word.todaysWord);
         })
-    }, [])
+    },[])
     
+    // 단어 하나하나를 넣는다
     const onSelectLetter = (keyVal) => {
         if(currAttempt.letterPos > 4) return;
         const newBoard = [...board];
@@ -50,6 +54,7 @@ const MiniGame = () =>{
         setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos + 1})
     }
 
+    // 단어를 지워준다
     const onDelete = () => {
         if(currAttempt.letterPos === 0) return;
         const newBoard = [...board];
@@ -58,6 +63,7 @@ const MiniGame = () =>{
         setCurrAttempt({...currAttempt, letterPos: currAttempt.letterPos - 1})
      }
 
+     // 엔터키 이벤트
     const onEnter = () => { 
         // 도전횟수가 5가 아니면 계속 진행
         if (currAttempt.letterPos !== 5) return;
@@ -66,13 +72,14 @@ const MiniGame = () =>{
         let currWord ="";
         for(let i=0; i<5; ++i){
             currWord += board[currAttempt.attempt][i];
+            //console.log(currWord);
         }
 
         // 현재 입력받은단어가 단어목록에 있는지 없는지 체크
         if(wordSet.has(currWord)){
             // 있으면 시도회수 + 1
             setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos : 0})
-            console.log(currWord);
+            //console.log(currWord);
         }else{
             alert("Word Not Found")
         }
@@ -92,10 +99,7 @@ const MiniGame = () =>{
     }
     return (
         <div className="App">
-          <nav>
-             {/* 헤더 */}
-             <HeaderNavi />
-          </nav>
+
           {/* 전역변수관리로 보내줄거 */}
           <AppContext.Provider
             value={{
@@ -112,11 +116,16 @@ const MiniGame = () =>{
               gameOver,
             }}
           >
+            <nav>
+             {/* 헤더 */}
+             <HeaderNavi />
+          </nav>
             <div className="game">
-              <Board />
+              {<Board />}
               {/* 게임오버되면 게임오버창 보여줌, 외엔 키보드 띄워줌 */}
               {gameOver.gameOver ? <GameOver /> : <Keyboard />}
             </div>
+            <button onClick={resetFunc}>Reset</button>
           </AppContext.Provider>
         </div>
       );
