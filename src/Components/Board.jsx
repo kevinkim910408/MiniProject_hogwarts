@@ -7,56 +7,37 @@ import Letter from './Letter';
 // Hooks
 import React from 'react'
 
-const Board = () => {
-
+function Board() {
+  const numList = [0,1,2,3,4];
+  const Board1 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={0} />))
+  const Board2 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={1} />))
+  const Board3 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={2} />))
+  const Board4 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={3} />))
+  const Board5 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={4} />))
+  const Board6 = numList.map((value, index)=>(<Letter letterPos={value} attemptVal={5} />))
   return (
-      <>
-        <div className='board'>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={0}/>
-              <Letter letterPos={1} attemptVal={0}/>
-              <Letter letterPos={2} attemptVal={0}/>
-              <Letter letterPos={3} attemptVal={0}/>
-              <Letter letterPos={4} attemptVal={0}/>
-            </div>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={1}/>
-              <Letter letterPos={1} attemptVal={1}/>
-              <Letter letterPos={2} attemptVal={1}/>
-              <Letter letterPos={3} attemptVal={1}/>
-              <Letter letterPos={4} attemptVal={1}/>
-            </div>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={2}/>
-              <Letter letterPos={1} attemptVal={2}/>
-              <Letter letterPos={2} attemptVal={2}/>
-              <Letter letterPos={3} attemptVal={2}/>
-              <Letter letterPos={4} attemptVal={2}/>
-            </div>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={3}/>
-              <Letter letterPos={1} attemptVal={3}/>
-              <Letter letterPos={2} attemptVal={3}/>
-              <Letter letterPos={3} attemptVal={3}/>
-              <Letter letterPos={4} attemptVal={3}/>
-            </div>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={4}/>
-              <Letter letterPos={1} attemptVal={4}/>
-              <Letter letterPos={2} attemptVal={4}/>
-              <Letter letterPos={3} attemptVal={4}/>
-              <Letter letterPos={4} attemptVal={4}/>
-            </div>
-            <div className="row">
-              <Letter letterPos={0} attemptVal={5}/>
-              <Letter letterPos={1} attemptVal={5}/>
-              <Letter letterPos={2} attemptVal={5}/>
-              <Letter letterPos={3} attemptVal={5}/>
-              <Letter letterPos={4} attemptVal={5}/>
-            </div>
-        </div>
-    </>
-  )
+    <div className="board">
+      {/* 보드생성 */}
+      <div className="row">
+        {Board1}
+      </div>
+      <div className="row">
+        {Board2}
+      </div>
+      <div className="row">
+        {Board3}
+      </div>
+      <div className="row">
+       {Board4}
+      </div>
+      <div className="row">
+       {Board5}
+      </div>
+      <div className="row">
+       {Board6}
+      </div>
+    </div>
+  );
 }
 
 

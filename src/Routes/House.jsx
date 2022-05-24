@@ -22,7 +22,8 @@ const House = () => {
     // 모든 해리포터 케릭터를 관리해줄 state
     const [characters, setCharacters] = useState([]);
     // url제일뒤에 붙혀서 하우스 를 판별해줄 변수
-    const [house,setHouse] = useState(""); 
+    //const [house,setHouse] = useState(""); 
+    let house = "";
 
     // 버튼 이미지
     const imgs = [B1, B2, B3, B4];
@@ -50,8 +51,11 @@ const House = () => {
         const emptyArr = [];
         setCharacters(emptyArr);
         // 하우스에 id값을 넣어줌
-        const houseID = e.target.id;
-        setHouse(houseID);
+        //const houseID = e.target.id;
+        //setHouse(houseID);
+        house = e.target.id;
+
+
         // url에서 데이터 가져오는 이벤트 시작
         getCharacters();
         handleScroll();
