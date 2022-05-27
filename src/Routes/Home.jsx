@@ -10,7 +10,9 @@ const Home = () => {
     const vidRef=useRef();
 
     // 오토플레이
-    useEffect(() => { vidRef.current.play(); },[]);
+    useEffect(() => { 
+        vidRef.current.play(); 
+    },[]);
 
     return (
         <>
