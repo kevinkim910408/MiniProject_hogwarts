@@ -31,7 +31,9 @@ const House = () => {
     // url을 가져오는 함수
     const getCharacters = async () => {
         // url에서 response 받아서 json data로 
-        const data = await (await fetch(`${URL}${house}`)).json
+        const response = await fetch(`${URL}${house}`)
+        const data = await response.json();
+        
         // url
         // 새 배열 만들어서
         let newArr = [];
