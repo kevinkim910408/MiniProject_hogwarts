@@ -1,4 +1,5 @@
 /* Home.jsx */
+import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
 // Import Header Menu Components
@@ -6,6 +7,13 @@ import HeaderNavi from "../Components/HeaderNavi.jsx";
 import Video from '../video/HarryPotter.mp4';
 
 const Home = () => {
+    const vidRef=useRef();
+
+    // 오토플레이
+    useEffect(() => { 
+        vidRef.current.play(); 
+    },[]);
+
     return (
         <>
             {/* Header Menu : fixed Component */}
@@ -13,7 +21,7 @@ const Home = () => {
 
             {/* background img => 동영상으로 바꿀 예정 */}
             <HomeMain>
-                <BackVideo controls loop>
+                <BackVideo controls loop ref={ vidRef }>
                     <source src={Video} type="video/mp4"></source>
                 </BackVideo>
             </HomeMain>

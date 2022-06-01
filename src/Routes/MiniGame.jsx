@@ -6,6 +6,10 @@ import Keyboard from "../Components/Keyboard"
 import HeaderNavi from '../Components/HeaderNavi'
 import { boardDefault, generateWordSet } from '../Components/Words';
 import GameOver from "../Components/GameOver";
+import {FlexRowDiv} from '../Components/GlobalStyled/CommonStyled'
+
+// css
+import styled from 'styled-components'
 
 //Hooks
 import { createContext, useEffect, useState } from 'react';
@@ -115,14 +119,46 @@ const MiniGame = () =>{
              {/* 헤더 */}
              <HeaderNavi />
           </nav>
-            <div className="game">
-              {<Board />}
-              {/* 게임오버되면 게임오버창 보여줌, 외엔 키보드 띄워줌 */}
-              {gameOver.gameOver ? <GameOver /> : <Keyboard />}
-            </div>
+            <Wrap>
+              <div className="game">
+                {<Board />}
+                {/* 게임오버되면 게임오버창 보여줌, 외엔 키보드 띄워줌 */}
+                {gameOver.gameOver ? <GameOver /> : <Keyboard />}
+              </div>
+              <TextWrap>
+                <p>MINI GAME RULES</p>
+                <p>1. guess the word in six goes or less</p>
+                <p>2. A correct letter turns <GreenText>green</GreenText></p>
+                <p>3. A correct letter in the wrong place turns <YellowText>yellow</YellowText></p>
+                <p>4. Letters can be used more than once</p>
+                <p>5. Answers are never plurals</p>
+              </TextWrap>
+            </Wrap>
           </AppContext.Provider>
         </div>
       );
     }
 
 export default MiniGame;
+
+const Wrap = styled(FlexRowDiv)`
+`;
+
+const TextWrap = styled.div`
+  margin-right: 200px;
+  font-size: 35px;
+  color: white;
+  text-shadow: 6px 6px 10px #3CCEBE;
+`;
+
+const GreenText = styled.span`
+    color: #528d4e;
+    filter: brightness(200%);
+    font-size: 50px;
+`;
+
+const YellowText = styled.span`
+    color: #b49f39;
+    filter: brightness(200%);
+    font-size: 50px;
+`;

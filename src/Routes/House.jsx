@@ -27,24 +27,25 @@ const House = () => {
 
     // 버튼 이미지
     const imgs = [B1, B2, B3, B4];
-   
+
     // url을 가져오는 함수
-    const getCharacters = async()=>{
+    const getCharacters = async () => {
         // url에서 response 받아서 json data로 
         const response = await fetch(`${URL}${house}`)
         const data = await response.json();
-
+        
+        // url
         // 새 배열 만들어서
-        let newArr =[];
+        let newArr = [];
 
         // 위에서 data 받은거 새 배열에 보관
-        newArr = data.map((value)=>value);
+        newArr = data.map((value) => value);
         // 배열에 들어있는거 케릭터 state에 넣어줌
         setCharacters(newArr)
     }
 
     // 전체적인 카드를 보여줄 변수
-    const ShowCharacters = characters.map((value, index)=>(<CharacterCard characters={characters} key={index} num={index}/>))
+    const ShowCharacters = characters.map((value, index) => (<CharacterCard characters={characters} key={index} num={index} />))
 
     // 버튼 클릭 이벤트
     const ClickEventHandler = (e) => {
@@ -62,29 +63,29 @@ const House = () => {
     }
 
     // 클릭하면 스크롤  내려감
-    const handleScroll = () => {  
+    const handleScroll = () => {
         window.scrollTo(0, SCROLL_VALUE_Y);
     }
-    
+
     return (
         <>
-        {/* Header Menu : fixed Component */}
-        <HeaderNavi />
-        <Wrap>
-            <ContentsWrap>
-                <HouseWrap>
-                    {/* 하우스 이름은 url 뒤에 붙여야 하기 때문에 그냥 각 기숙사 이름으로 */}
-                    <HouseButton onClick={ClickEventHandler} id={"gryffindor"} style={{backgroundImage:`url(${imgs[0]})`}} />
-                    <HouseButton onClick={ClickEventHandler} id={"Slytherin"} style={{backgroundImage:`url(${imgs[1]})`}} />
-                    <HouseButton onClick={ClickEventHandler} id={"Ravenclaw"} style={{backgroundImage:`url(${imgs[2]})`}} />
-                    <HouseButton onClick={ClickEventHandler} id={"Hufflepuff"} style={{backgroundImage:`url(${imgs[3]})`}} />
-                </HouseWrap>
+            {/* Header Menu : fixed Component */}
+            <HeaderNavi />
+            <Wrap>
+                <ContentsWrap>
+                    <HouseWrap>
+                        {/* 하우스 이름은 url 뒤에 붙여야 하기 때문에 그냥 각 기숙사 이름으로 */}
+                        <HouseButton onClick={ClickEventHandler} id={"gryffindor"} style={{ backgroundImage: `url(${imgs[0]})` }} />
+                        <HouseButton onClick={ClickEventHandler} id={"Slytherin"} style={{ backgroundImage: `url(${imgs[1]})` }} />
+                        <HouseButton onClick={ClickEventHandler} id={"Ravenclaw"} style={{ backgroundImage: `url(${imgs[2]})` }} />
+                        <HouseButton onClick={ClickEventHandler} id={"Hufflepuff"} style={{ backgroundImage: `url(${imgs[3]})` }} />
+                    </HouseWrap>
                     <CharactersWrap>
                         {ShowCharacters}
                     </CharactersWrap>
-            </ContentsWrap>
-        </Wrap>
-        <div style={{ height:"500px"}}></div>
+                </ContentsWrap>
+            </Wrap>
+            <div style={{ height: "500px" }}></div>
         </>
     )
 }
