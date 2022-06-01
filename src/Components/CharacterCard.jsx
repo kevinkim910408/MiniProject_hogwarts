@@ -14,16 +14,16 @@ const CharacterCard = ({characters, num}) => {
                     <img style={{width:"300px", height:"400px", borderRadius: "10%"}} src={characters[num].image} alt="" />
                 </div>
                 <MiddleTextWrap>
-                    <div>{characters[num].name}</div>
-                    <div>{characters[num].house}</div>
-                    <div>{characters[num].dateOfBirth}</div>
-                    <div>{characters[num].ancestry}</div>
-                    <div>{characters[num].patronus}</div>
-                </MiddleTextWrap>
-                <MiddleTextWrap>
-                    <div>{characters[num].wand.core}</div>
-                    <div>{characters[num].wand.length}</div>
-                    <div>{characters[num].wand.wood}</div>
+                    <ProfileText>{characters[num].name}</ProfileText>
+                    <ProfileText>{characters[num].house}</ProfileText>
+                    <ProfileText>{characters[num].dateOfBirth}</ProfileText>
+                    <ProfileText>{characters[num].ancestry}</ProfileText>
+                    <ProfileText>{characters[num].patronus}</ProfileText>
+                    <WandProfile>
+                        <Wand>{characters[num].wand.core}</Wand>
+                        <Wand>{characters[num].wand.length}</Wand>
+                        <Wand>{characters[num].wand.wood}</Wand>
+                    </WandProfile>
                 </MiddleTextWrap>
             </Card>
             }
@@ -45,24 +45,43 @@ const animation = keyframes`
 // styled-components
 const Card = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
     width: 100%;
     height: 450px;
     background-color: black;
-    padding: 10px;
+    padding: 24px;
     color: white;
     border-radius: 30px;
     animation: ${animation} 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 const MiddleTextWrap = styled.div`
-    display: flex;
+    display : flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 30px;
+    margin-left: 30px;
 `;
 
+const ProfileText = styled.span`
+    font-size : 18px;
+    margin-bottom: 10px;
+    &:nth-child(1) {
+        margin-top: 50px;
+        font-size : 38px;
+        margin-bottom: 30px;
+        text-shadow: 6px 6px 10px yellow;
+    }
+    &:nth-child(2) {
+        font-size : 24px;
+        margin-bottom: 50px;
+    }
+`
+
+const WandProfile = styled.div`
+     font-size : 18px;
+     display: flex;
+     justify-content: flex-start;
+`
+
+const Wand = styled.span`
+    margin-right: 10px;
+`
