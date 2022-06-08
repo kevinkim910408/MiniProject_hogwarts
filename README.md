@@ -15,8 +15,8 @@
    <br/><img src="https://img.shields.io/badge/GitHub-purple?style=flat-flat&logo=Github&logoColor=white"/>
 
   
-## 📽 시연 영상
-// 영상링크
+## 📽 배포
+https://kevinkim910408.github.io/MiniProject_hogwarts/#/house
 
 ## 📝 와이어 프레임
 ### [ Main page]
