@@ -147,3 +147,22 @@ nav h1 {
     background-color: #3a393c;
 }
 
+.galley_text {
+    font-family : Hahmlet;
+}
+
+.intro-card__title {
+    font-family: 'Hahmlet', serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.intro-card__date {
+    font-size: 20px;
+    font-family: 'Hahmlet', serif;
+    margin-bottom: 30px;
+}
+
+.intro-card__text {
+    font-size : 20px;
+}
