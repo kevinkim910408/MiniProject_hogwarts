@@ -1,13 +1,14 @@
 /* Import */
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import LogoImg from '../img/pngegg.png';
 
 const HeaderNavi = () => {
 
     return (
         <HeaderBar>
           {/* Logo Img 제작해서 넣을 예정 */}
-          <HeaderMenu to={`/`}><span>Logo</span></HeaderMenu>
+          <HeaderMenu to={`/`}><img src = {LogoImg} style = {{ height : "60px", marginTop : "5px"}}/></HeaderMenu>
           {/* Heather Menu 파트별 네이밍 고민 */}
           <HeaderMenu to={`/house`}><span>PotterWiki</span></HeaderMenu>
           <HeaderMenu to={`/gallery`}><span>Gallery</span></HeaderMenu>
