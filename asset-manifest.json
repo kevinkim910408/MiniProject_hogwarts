@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MiniProject_hogwarts/static/css/main.d44a2461.css",
-    "main.js": "/MiniProject_hogwarts/static/js/main.ebbbb37a.js",
+    "main.js": "/MiniProject_hogwarts/static/js/main.ae20610c.js",
     "static/media/HarryPotter.mp4": "/MiniProject_hogwarts/static/media/HarryPotter.0bb043a2a8cb38ad6107.mp4",
     "static/media/bg.png": "/MiniProject_hogwarts/static/media/bg.2ad3d28a2380a713e0f3.png",
     "static/media/G24.png": "/MiniProject_hogwarts/static/media/G24.d269c17235e8037931b3.png",
@@ -44,10 +44,10 @@
     "static/media/word-bank.txt": "/MiniProject_hogwarts/static/media/word-bank.7ad0335cc7e1f6b691f4.txt",
     "index.html": "/MiniProject_hogwarts/index.html",
     "main.d44a2461.css.map": "/MiniProject_hogwarts/static/css/main.d44a2461.css.map",
-    "main.ebbbb37a.js.map": "/MiniProject_hogwarts/static/js/main.ebbbb37a.js.map"
+    "main.ae20610c.js.map": "/MiniProject_hogwarts/static/js/main.ae20610c.js.map"
   },
   "entrypoints": [
     "static/css/main.d44a2461.css",
-    "static/js/main.ebbbb37a.js"
+    "static/js/main.ae20610c.js"
   ]
 }
