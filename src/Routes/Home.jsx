@@ -7,6 +7,13 @@ import HeaderNavi from "../Components/HeaderNavi.jsx";
 import Video from '../video/HarryPotter.mp4';
 
 const Home = () => {
+
+    const [enter, setEnter] = useState(false);
+
+    const videoHandler = () => {
+        setEnter(true);
+    };
+
     const vidRef=useRef();
 
     // 오토플레이
@@ -18,9 +25,9 @@ const Home = () => {
         <>
             {/* Header Menu : fixed Component */}
             <HeaderNavi></HeaderNavi>
-
             {/* background img => 동영상으로 바꿀 예정 */}
-            <HomeMain>
+
+            <HomeMain onMouseOver = {videoHandler} >
                 <BackVideo controls loop ref={ vidRef }>
                     <source src={Video} type="video/mp4"></source>
                 </BackVideo>
@@ -39,13 +46,24 @@ const HomeMain = styled.div`
   position: absolute;
 `;
 
+// const Spell = styled.button`
+//   z-index : 2;
+//   position : absolute;
+//   top : 45%;
+//   left : 45%;
+//   color : white;
+//   font-size: 50px;
+//   background: none;
+//   border : none;
+// `
+
 const BackVideo = styled.video`
-    width: 100vw;
-    position: absolute;
-    @media screen and (max-aspect-ratio: 1219/685) {
+    object-fit: scale-down;
+    /* position: fixed; */
+    /* @media screen and (max-aspect-ratio: 1219/685) {
        width: 100%;
        height: 100vh;
-    }
+    } */
     &::-webkit-media-controls-fullscreen-button {
         display: none !important;
     };
