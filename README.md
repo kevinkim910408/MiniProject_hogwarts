@@ -8,13 +8,12 @@
 * 🧒 이윤
 
 ## 🛠️ 스택
-  * <b>Front-end</b> <br/><br/>
-  <img src="https://img.shields.io/badge/React-0080B9?style=flat&logo=React&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JavaScript-FDC813?style=flat&logo=JavaScript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/CSS-0080B9?style=flat&logo=CSS3&logoColor=white"/>
+  * <b>Front-end</b> <br/>
+  <img src="https://img.shields.io/badge/React-0080B9?style=flat&logo=React&logoColor=white"/><img src="https://img.shields.io/badge/JavaScript-FDC813?style=flat&logo=JavaScript&logoColor=black"/><img src="https://img.shields.io/badge/CSS-0080B9?style=flat&logo=CSS3&logoColor=white"/>
 
-  * <b>Tool</b>
-    * Git
+  * <b>Tool</b> <br/>
+  <img src="https://img.shields.io/badge/GitHub-purple?style=flat-flat&logo=Github&logoColor=white"/>
+
   
 ## 📽 시연 영상
 // 영상링크
